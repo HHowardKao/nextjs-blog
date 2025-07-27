@@ -105,7 +105,7 @@ const Table = lazy(() => import("models/micro/Table"));
         },
       },
     },
-```
+
 
 ### 實作觀察紀錄:
 
