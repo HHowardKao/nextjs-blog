@@ -25,10 +25,12 @@ date: "2020-01-02"
 | **常見用途** | 了解各個模組的輸出量         | 最佳化效能與 lazy load 時機點                              |
 
 ```js
+
 // 原本：一進頁面就載入（不論有沒有用到）
 import EditModeWrapper from "components/EditModeWrapper";
 import MonacoEditModeWrapper from "components/EditModeWrapper/monacoEditor";
 import PageHeader from "models/micro/PageHeader";
 import SearchBoxLayout from "models/micro/SearchBoxLayout";
 import Table from "models/micro/Table";
-```
+
+
