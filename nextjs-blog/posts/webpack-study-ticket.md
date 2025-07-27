@@ -30,11 +30,11 @@ date: "2025-01-02"
 
 #### 比較 Stat vs Parsed
 
-| 項目         | Stat Size（stat）              | Parsed Size（parse）                                           |
-| ------------ | ------------------------------ | -------------------------------------------------------------- |
+| 項目         | Stat Size（stat）              | Parsed Size（parse）                                         |
+|------------|------------------------------|------------------------------------------------------------|
 | **定義**     | 原始打包後模組的大小（未壓縮） | 實際在瀏覽器執行時，解析後佔用的大小（包含語法結構、載入狀況） |
-| **比較用處** | 方便追蹤模組來源與結構         | 反映真正在瀏覽器中執行時的大小（更準確）                       |
-| **常見用途** | 了解各個模組的輸出量           | 最佳化效能與 lazy load 時機點                                  |
+| **比較用處** | 方便追蹤模組來源與結構       | 反映真正在瀏覽器中執行時的大小（更準確）                     |
+| **常見用途** | 了解各個模組的輸出量         | 最佳化效能與 lazy load 時機點                              |
 
 ### 為什麼 stat size 明明很分散但 parsed size 卻會過大?
 
@@ -117,11 +117,11 @@ const Table = lazy(() => import("models/micro/Table"));
 #### 1.把 lodash 做模組導入:entry modules (concatenated):1.74MB
 
 (表格僅舉一個例子，有把所有 lodash 都改成這樣按需引入的寫法)
-| 寫法 | 打包體積 |
-| ------------------------------------------------- | ---------- |
-| `import { camelCase, upperFirst } from 'lodash';` | 整包進來(整包引入) |
-| `import upperFirst from 'lodash/upperFirst';` | 僅載入單個(按需引入) |
-| `import camelCase from 'lodash/camelCase'` | 僅載入單個(按需引入) |
+| 寫法                                              | 打包體積             |
+|---------------------------------------------------|------------------|
+| `import { camelCase, upperFirst } from 'lodash';` | 整包進來(整包引入)   |
+| `import upperFirst from 'lodash/upperFirst';`     | 僅載入單個(按需引入) |
+| `import camelCase from 'lodash/camelCase'`        | 僅載入單個(按需引入) |
 
 ![image](https://hackmd.io/_uploads/HkYw2G1wex.png)
 ![image](https://hackmd.io/_uploads/S1CkiG1wll.png)
